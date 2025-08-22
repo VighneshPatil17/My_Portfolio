@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You Watermark</title>
+  <style>
+    /* Reset and font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background: #0a192f;
+      color: #64ffda;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Background watermark container */
+    .watermark-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    /* Watermark styling */
+    .watermark-text {
+      position: absolute;
+      font-size: clamp(16px, 3vw, 32px);
+      font-weight: 700;
+      color: rgba(100, 255, 218, 0.05);
+      white-space: nowrap;
+      user-select: none;
+      animation: floatUpDown 12s ease-in-out infinite;
+    }
+
+    /* Animation for floating */
+    @keyframes floatUpDown {
+      0%, 100% {
+        transform: translateY(0);
+        opacity: 0.05;
+      }
+      50% {
+        transform: translateY(10px);
+        opacity: 0.1;
+      }
+    }
+
+    /* Foreground content */
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #ccd6f6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watermark-container" aria-hidden="true">
+    <span class="watermark-text" style="top: 5%; left: 10%; animation-delay: 0s;">Thank You</span>
+    <span class="watermark-text" style="top: 15%; left: 40%; animation-delay: 1s;">Thank You</span>
+    <span class="watermark-text" style="top: 25%; left: 70%; animation-delay: 2s;">Thank You</span>
+    <span class="watermark-text" style="top: 40%; left: 20%; animation-delay: 3s;">Thank You</span>
+    <span class="watermark-text" style="top: 50%; left: 50%; animation-delay: 4s;">Thank You</span>
+    <span class="watermark-text" style="top: 60%; left: 80%; animation-delay: 5s;">Thank You</span>
+    <span class="watermark-text" style="top: 70%; left: 30%; animation-delay: 6s;">Thank You</span>
+    <span class="watermark-text" style="top: 80%; left: 60%; animation-delay: 7s;">Thank You</span>
+    <span class="watermark-text" style="top: 90%; left: 10%; animation-delay: 8s;">Thank You</span>
+  </div>
+
+  <main>
+    <h1>Thank You!</h1>
+    <p>
+      Your message has been received successfully.<br>
+      I appreciate your time and interest. As a passionate software developer, I value every interaction—let's build something great together.<br><br>
+      I’ll get back to you shortly!
+    </p>
+  </main>
+
+</body>
+</html>
